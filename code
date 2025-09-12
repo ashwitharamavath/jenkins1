@@ -3,6 +3,7 @@ pipeline {
   options { timestamps(); timeout(time: 15, unit: 'MINUTES') }
 
   stages {
+
     /* 1) WHERE AM I — run on Controller (built-in) */
     stage('Where am I (Controller)') {
       agent { label 'built-in' }
@@ -47,10 +48,7 @@ pipeline {
 
   post {
     always {
-      agent { label 'win' }  // Run post steps on the same agent where artifacts were created
-      steps {
-        archiveArtifacts artifacts: 'artifact.txt, out/', allowEmptyArchive: false
-      }
+      archiveArtifacts artifacts: 'artifact.txt, out/', allowEmptyArchive: false
     }
   }
 }
