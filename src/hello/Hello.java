@@ -4,6 +4,8 @@ public class Hello {
         System.out.println("Hello from Jenkins Pipeline CI/CD!");
         System.out.println("Hello Ashwitha");
         System.out.println("Webhook");
+        System.out.println("Webhook updated");
+
     }
 }
 
